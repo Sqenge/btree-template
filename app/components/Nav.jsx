@@ -43,7 +43,6 @@ export default function Nav({ children }) {
             ev.preventDefault();
             ev.stopPropagation();
             setOpenPost(true);
-            console.log(posts);
           }}>
           <FaPlus />
         </button>

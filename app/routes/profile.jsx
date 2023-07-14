@@ -1,7 +1,8 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import Nav from "../components/Nav";
 import { FaRegHeart } from "react-icons/fa";
 import AppContext from "../util/context";
+import PostComment from "../components/PostComment";
 
 export const meta = () => {
   return [{ title: "" }, { name: "description", content: "" }];
@@ -9,6 +10,7 @@ export const meta = () => {
 
 export default function Index() {
   let { posts, user } = useContext(AppContext);
+  let [openComment, setOpenComment] = useState(undefined);
 
   return (
     <Nav>
@@ -28,10 +30,14 @@ export default function Index() {
         </div>
         <div className="grid grid-cols-3 w-full gap-1 mt-1">
           {posts.map((v) => (
-            <div className="bg-accent" style={{ aspectRatio: 1 }}></div>
+            <div
+              className="bg-accent"
+              style={{ aspectRatio: 1 }}
+              onClick={() => setOpenComment(v)}></div>
           ))}
         </div>
       </div>
+      <PostComment post={openComment} close={() => setOpenComment(undefined)} />
     </Nav>
   );
 }

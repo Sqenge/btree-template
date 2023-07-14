@@ -24,7 +24,7 @@ export default function Index() {
       <div className="flex justify-center flex-col items-center gap-5 overflow-y-auto">
         <div className="card w-80 bg-base-100 shadow-xl overflow-hidden">
           <div className="bg-neutral w-80 h-40 flex justify-center items-center text-3xl font-bold text-accent">
-            Remix App
+            Template
           </div>
           <div className="card-body pt-2 px-3 max-h-32">
             <div className="flex justify-between">
